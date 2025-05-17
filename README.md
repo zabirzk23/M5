@@ -1,4 +1,4 @@
-EX-21-POINTERS
+# EX-21-POINTERS
 # AIM:
 Write a C program to convert a 23.65 into 25 using pointer
 
@@ -10,18 +10,22 @@ Write a C program to convert a 23.65 into 25 using pointer
 
 ## PROGRAM:
 
+```
+
+#include <stdio.h>
+
+int main() {
+    double x = 23.65;
+    double *p = &x;
+    *p = 25.0;
+    printf("%.1f", x);
+    return 0;
+}
+
+```
 ## OUTPUT:
  	
-
-
-
-
-
-
-
-
-
-
+![Screenshot 2025-05-17 161722](https://github.com/user-attachments/assets/9c983718-8bff-45ca-a7db-6134942dba2f)
 
 ## RESULT:
 Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
@@ -45,8 +49,29 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+
+```
+
+#include <stdio.h>
+
+unsigned long long f(int n) {
+    if(n == 1) return 1;
+    return n * f(n - 1);
+}
+
+int main() {
+    int n = 12;
+    unsigned long long p = f(n);
+    printf("%llu", p);
+    return 0;
+}
+
+```
 ## OUTPUT:
-         		
+
+![Screenshot 2025-05-17 161949](https://github.com/user-attachments/assets/4b4c731e-d0dc-40a7-aea5-161609c93f3e)
+
+
 ## RESULT:
 
 Thus the program has been executed successfully.
@@ -69,17 +94,35 @@ Write C Program to find Sum of each row of a Matrix
 
 ## PROGRAM:
 
+```
 
+#include <stdio.h>
+
+int main() {
+    int a[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    int i, j, s;
+    for(i = 0; i < 3; i++) {
+        s = 0;
+        for(j = 0; j < 3; j++) {
+            s += a[i][j];
+        }
+        printf("%d\n", s);
+    }
+    return 0;
+}
+
+```
 
 ## OUTPUT
 
 
- 
+ ![Screenshot 2025-05-17 162235](https://github.com/user-attachments/assets/57b90854-5d3a-443e-aeb0-e59753c06db2)
+
  
 
  ## RESULT
  
-
+Thus the program has been executed successfully.
 
 # EX-24-STRINGS
 
@@ -97,18 +140,35 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 
 ## PROGRAM:
 
+```
 
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[100];
+    int r, i, j, k = 0;
+    scanf("%s", s);
+    scanf("%d", &r);
+    for(i = 0; i < r; i++) {
+        for(j = 0; j < r - i - 1; j++) printf(" ");
+        for(j = 0; j <= i; j++) {
+            printf("%c ", s[k]);
+            k = (k + 1) % strlen(s);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+```
  ## OUTPUT
 
- 
+ ![Screenshot 2025-05-17 162609](https://github.com/user-attachments/assets/5de78135-4f1b-4b82-b161-3c5dfed74196)
 
 ## RESULT
 
-Thus the C program to String process executed successfully
- 
-
- 
-.
+Thus the C program to String process executed successfully.
 
 
 
@@ -133,9 +193,23 @@ Step 6: End the program.
 
 ## PROGRAM
 
+```
+
+#include <stdio.h>
+
+int main() {
+    int a[10], *p = a, n, i;
+    scanf("%d", &n);
+    for(i = 0; i < n; i++) scanf("%d", p + i);
+    for(i = 0; i < n; i++) printf("%d ", *(p + i));
+    return 0;
+}
+
+```
+
 ## OUTPUT
 
- 
+ ![Screenshot 2025-05-17 162846](https://github.com/user-attachments/assets/37152603-e61b-4041-8089-efe41c9c5d1d)
 
 ## RESULT
 
